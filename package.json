@@ -1,0 +1,15 @@
+{
+  "name": "react-es6",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "babelify": "^6.0.2",
+    "bower": "^1.4.1",
+    "browserify": "^10.1.0",
+    "flux": "^2.0.3",
+    "keymirror": "^0.1.1",
+    "react": "^0.13.2",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
