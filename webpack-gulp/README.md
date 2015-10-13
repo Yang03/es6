@@ -5,7 +5,7 @@
 
 AMD(代表requireJs) ,CMD(seaJS)就是在这种场景下产生的，
 
-###＃ 首先来分析下 requireJs,seaJs
+#### 首先来分析下 requireJs,seaJs
 
 AMD(requireJs前置加载)
  AMD会预先下载依赖，由于浏览器的特点，依赖肯定需要预先加载，但是RequireJs还会
