@@ -121,4 +121,4 @@ balbel 将es6 编译到 es5
 
 此处我们用webpack 的 babel-laoder进行编译
 
-("https://github.com/flashYang/es6/tree/master/webpack-gulp") code
+[This link]("https://github.com/flashYang/es6/tree/master/webpack-gulp") code
