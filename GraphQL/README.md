@@ -1,4 +1,4 @@
-### nvm?
+### 什么是nvm
 nvm全称Node Version Manager,可以方便的管理node version
 
 
