@@ -30,13 +30,37 @@ nvm全称Node Version Manager,可以方便的管理node version
 ### 如何在node 里面使用es6(use babel)
 * babel-preset-es2015
 
-```install babel-preset-es2015 --save-dev
+```
+    install babel-preset-es2015 --save-dev
 ```
 
 * 编译
 
-```nodemon index.js --exec babel-node --presets es2015
 ```
+    nodemon index.js --exec babel-node --presets es2015
+```
+
+### babel-register
+* install babel-core, babel-preset-ex2015
+
+* bind hook
+
+```
+  require("babel-register")({
+      // This will override `node_modules` ignoring - you can alternatively pass
+      // an array of strings to be explicitly matched or a regex / glob
+      ignore: false
+  });
+```
+* add .babelrc
+
+```
+    {
+        "presets": ["es2015"]
+    }
+```
+
+
 
 
 
