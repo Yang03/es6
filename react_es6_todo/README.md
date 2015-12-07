@@ -80,11 +80,36 @@
   ```
   
   store 的功能加入了 EventEmitter, 可以监听和广播事件
+  ```
+    class AppStore extends EventEmitter{
+        getAll() {
+            return _todos;
+        }
+        emitChange(){
+            this.emit(CHANGE_EVENT);
+        }
+
+        addChangeListener(callback){
+            this.on(CHANGE_EVENT, callback);
+        }
+
+        removeChangeListener(callback){
+            this.removeListener(CHANGE_EVENT, callback);
+        }
+    }
+  ```
   
-  
-  flux 整个流程
+  flux 整个流程(盗图一张)
   
   ![flux](https://cloud.githubusercontent.com/assets/10190366/11296897/e1cd1ba0-8faf-11e5-9edf-7cc0b9c80a00.png)
+
+  可以看出
+    ### Action Creator
+     作为全部数据改变和交互的入口，更改数据或者view的时候出发Action
+     Action Creator把 type 和 payload 封装成一个Action,type 是定义的多个(常量)之一
+
+
+
   
 
 
