@@ -99,14 +99,26 @@
     }
   ```
   
-  flux 整个流程(盗图一张)
+  flux 整个流程
   
-  ![flux](https://cloud.githubusercontent.com/assets/10190366/11296897/e1cd1ba0-8faf-11e5-9edf-7cc0b9c80a00.png)
+  ![flux](https://cloud.githubusercontent.com/assets/10190366/11647166/cd6d24f4-9d9f-11e5-844c-21f340125e84.png)
 
-  可以看出
-    ### Action Creator
-     作为全部数据改变和交互的入口，更改数据或者view的时候出发Action
-     Action Creator把 type 和 payload 封装成一个Action,type 是定义的多个(常量)之一
+ 可以看出
+### Action Creator
+ 作为全部数据改变和交互的入口，更改数据或者view的时候出发Action
+ Action Creator把 type 和 payload 封装成一个Action,type 是定义的多个(常量)之一
+
+### Dispatcher
+   是函数回调的绑定中心，连接着action和store，Action Creator给过来的action，会传给
+   store
+
+### Store
+如果store 在 dispatcher 中注册。action 会传递到store，
+在 store 中，通常会使用一个 switch 语句来判断 action 的类型，
+决定是否对这个 action 做出相应。如果 store 关心这个 action，
+就会根据 action 找出需要变化的部分，更新 state。然后触发change
+事件，改变试图
+
 
 
 
