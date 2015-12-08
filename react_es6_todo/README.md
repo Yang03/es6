@@ -117,7 +117,7 @@
 在 store 中，通常会使用一个 switch 语句来判断 action 的类型，
 决定是否对这个 action 做出相应。如果 store 关心这个 action，
 就会根据 action 找出需要变化的部分，更新 state。然后触发change
-事件，改变试图
+事件，改变视图
 
 
 
