@@ -1,15 +1,21 @@
-import express from 'express';
+import Express from 'express';
 
-let app = express();
-const PORT = 3000;
+import GraphHTTP from 'express-graphql';
+import Schema from './schema';
 
-app.get('/test', (req, res) => {
-    res.send('test');
-})
+// Config
+const APP_PORT = 3000;
 
-let server = app.listen(PORT, function(){
-    let host = server.address().address;
-    let port = server.address().port;
+// Start
+const app = Express();
 
-    console.log('listening at http://%s:%s', host, port);
-})
+// GraphQL
+app.use('/graphql', GraphHTTP({
+    schema: Schema,
+    pretty: true,
+    graphiql: true
+}));
+
+app.listen(APP_PORT, ()=> {
+    console.log(`App listening on port ${APP_PORT}`);
+});
