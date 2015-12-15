@@ -2,7 +2,7 @@ import {ADD_TODO, VisibilityFilters, COMPLETE_TODO, SET_VISIBILITY_FILTER} from 
 
 import {combineReducers} from 'redux'
 
-const { SHOW_ALL } = VisibilityFilters;
+const { SHOW_ALL } = VisibilityFilters
 
 
 
