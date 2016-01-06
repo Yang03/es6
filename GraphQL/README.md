@@ -15,6 +15,7 @@ nvm全称Node Version Manager,可以方便的管理node version
     * nvm list (node version list)
     * nvm install v4.2.1 (安装node)
     * nvm use v4.2.1 (切换到v4.2.1)
+    * node -harmony --help 查看es6 es7支持
 
 ### nodemon
 

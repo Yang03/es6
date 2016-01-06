@@ -44,6 +44,7 @@ function todos(state = initialState, action) {
 const todoApp = combineReducers({
     visibilityFilter,
     todos
+
 })
 
 /* equals
