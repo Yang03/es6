@@ -23,9 +23,9 @@
 
 #### terminal:
 
-   ```
+```
     mocha
-    ```
+```
 
 ### mocha 允许使用第三方库,如(should.js)
 
