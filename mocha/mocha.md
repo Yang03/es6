@@ -22,16 +22,20 @@
     });
 
 #### terminal:
+
    ```
     mocha
     ```
 
 ### mocha 允许使用第三方库,如(should.js)
+
+
 ```
     npm install should --save-dev
 ```
 
 ### Asynchronous 异步
+
 ```
     describe('async', function(){
         describe('async function', function(){
@@ -44,6 +48,7 @@
         })
     })
 ```
+
 当test 执行完成后执行done
 
 
