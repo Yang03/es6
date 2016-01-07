@@ -72,7 +72,12 @@ skip作用相反，其他会执行，自己会被忽略
 it里面的function留空。mocha默认会pass这条测试。
 
 ### hook
+    ＊before  // 在本区块的所有测试用例之前执行
+    ＊beforeEach // 在本区块的每个测试用例之前执行
+    ＊after
+    ＊afterEach
 
+### 
 
 
 
