@@ -1,6 +1,11 @@
 ### mocha?
     mocha是一个功能丰富的js 测试框架，运行在node.js和浏览器器端
 
+### BBD TDD
+    * Behavior-driven development 行为驱动开发(注重测试逻辑）
+    * Test-driven development   测试驱动开发（注重输出结果）
+
+
 ### Getting Started
 
     var assert = require('assert');
@@ -25,6 +30,13 @@
 
 ```
     mocha
+    mocha --recursive 执行test目录下所有目录
+    mocha test/{xx,xxx}.js 执行test下xx.js,xxx.js的测试
+    mocha test/unit/*js 执行unit下面所有的js
+    mocha --watch 监视指定的测试脚本。只要测试脚本有变化，就会自动运行Mocha
+    mocha --bail 只要有一个测试用例没有通过，就停止执行后面的测试用例
+    mocha --grep 搜索用的
+
 ```
 
 ### mocha 允许使用第三方库,如(should.js)
@@ -50,6 +62,19 @@
 ```
 
 当test 执行完成后执行done
+
+### only 和skip
+使用了only之后，这条descibe就只执行only，其他的忽略。
+skip作用相反，其他会执行，自己会被忽略
+
+
+### Pending
+it里面的function留空。mocha默认会pass这条测试。
+
+### hook
+
+
+
 
 
 
