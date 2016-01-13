@@ -1,6 +1,8 @@
 ### 什么是nvm
 nvm全称Node Version Manager,可以方便的管理node version
 
+### 设置NODE_ENV
+export NODE_ENV = development
 
 #### 如何安装nvm
 ```
