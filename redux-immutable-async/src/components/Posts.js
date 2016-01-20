@@ -5,8 +5,8 @@ export default class Posts extends Component {
         return (
             <ul>
                 {this.props.posts.map((post, i) =>
-                    <li key={i}>{post.title}</li>
-                )}
+                         <li key={i}>{post.get('title')}</li>
+                    )}
             </ul>
         )
     }
@@ -15,3 +15,9 @@ export default class Posts extends Component {
 Posts.propTypes = {
     posts: PropTypes.array.isRequired
 }
+
+//{this.props.posts.map((post, i) => {
+//        console.log(post)
+//        return <li key={i}>{post.get('title')}</li>
+//    }
+//    )}

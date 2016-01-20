@@ -62,6 +62,17 @@ export NODE_ENV = development
         "presets": ["es2015"]
     }
 ```
+### 查询
+
+```
+{
+  user(id: 1) {
+    id,
+    firstName
+  }
+}
+```
+
 
 
 
