@@ -6,8 +6,33 @@
     <div id='root'>
     </div>
   </body>
-  <script src="/static/bundle.js"></script>
+  <!--<script src="/static/bundle.js"></script>-->
 <script>
-  test();
+  class Animal {
+    constructor(name) {
+      this.name = name;
+      this._age = 0;
+    }
+
+    get age() {
+      console.log('get')
+      return this._age;
+    }
+
+    set age(value) {
+      console.log('set')
+      this._age = value;
+    }
+
+    doSomething() {
+      console.log("I'm a " + this.name);
+    }
+  }
+
+  var animal = new Animal("op");
+  animal.doSomething();
+  animal.age = 5;
+  console.log(animal.age)
+
 </script>
 </html>
