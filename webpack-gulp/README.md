@@ -1,3 +1,4 @@
+
 ### js 的模块开发
 
 随着js能做的事情越来越多，浏览器、服务器，js似乎无处不在，
@@ -50,7 +51,7 @@ AMD(requireJs前置加载)
 	 		require(['a'], function(a){
 	 			a.test()
 	 		})
-	 		
+
 	 	})
 ```
 这种其实是一种懒加载，从netWork里面的网络请求也可以看出，这种也有问题，如果请求耗时太长，
@@ -65,7 +66,7 @@ define(function(require, exports, module){
      })
 require(['a'], function(d){
  	// todo
-}); 
+});
 
 ```
 
@@ -84,7 +85,7 @@ require(['a'], function(d){
 //main.js
 define(function(require, exports, module){
      console.log('main.js');
- 
+
      var a = require('a');
      a.test();    
 });
@@ -106,7 +107,7 @@ define(function(require, exports, module){
 	// b.js
 	import {test, a} from 'a'
 		console.log(a)
-		test()	
+		test()
 
 ```
 是不是很简单。当然很多浏览器不支持，但是会有工具如babel ,webpack, gulp
@@ -121,4 +122,5 @@ balbel 将es6 编译到 es5
 
 此处我们用webpack 的 babel-laoder进行编译
 
-[code]("https://github.com/flashYang/es6/tree/master/webpack-gulp") 
+[code]("https://github.com/flashYang/es6/tree/master/webpack-gulp")
+=======

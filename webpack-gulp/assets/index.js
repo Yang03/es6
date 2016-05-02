@@ -7,79 +7,54 @@
 //
 //test()
 
+import {test} from './index/index'
+import Immutable from 'immutable'
 
-function combineReducers(reducers) {
-   // console.log(reducers)
-    var finalReducers = pick(reducers, (val) => typeof val === 'function')
+const a = Immutable.fromJS({a: 1,b:2, c:3})
+console.log(a.inspect())  // Map { "a": 1, "b": 2, "c": 3 }
 
-    //console.log(finalReducers)
-    var hasChange = false
-    return function combination(state = {}, action) {
-        var finalState = mapValues(finalReducers, (reducer, key)=> {
-            /*
-             * reducer fn
-             * key
-             * */
-            var previousStateForKey = state[key]
-            var nextStateForKey = reducer(previousStateForKey, action)
-            console.log(previousStateForKey);
-            console.log(nextStateForKey);
-        })
-    }
-}
+//
+let students = Immutable.fromJS([
+	{name: 'a', gender: 'F', score: 80},
+	{name: 'b', gender: 'M', score: 90},
+	{name: 'c', gender: 'F', score: 60}
+])
 
-function pick(obj, fn) {
-    return Object.keys(obj).reduce((result, key) => {
-        if (fn(obj[key])) {
-            result[key] = obj[key]
-        }
-        return result
-    }, {})
-}
+//取值
+console.log(students.get(0)) //Map
+console.log(students.getIn([0, 'score'])) //80
 
-function mapValues(obj, fn) {
-    return Object.keys(obj).reduce((result, key) => {
-        // console.log(result);
-        //console.log(key);
-        result[key] = fn(obj[key], key)
-        return result
-    }, {})
-}
+// 赋值
+let s = students.setIn([0, 'score'], 85)
+console.log(s.getIn([0, 'score'])) //85
 
-function testReducers(state = {}, action) {
-    switch (action.type) {
-        case 'del':
-            return {'del': 1}
-        default:
-            return state
-    }
-}
+//判断
+let c = Immutable.Map({name: 'c', gender: 'F', score: 60 })
+console.log(students.includes(c)) //true
 
-function test2Reducers(state = {}, action) {
-    switch (action.type) {
-        case 'add':
-            return {'add': 1}
-        default:
-            return state
-    }
-}
+// 判断是否想等
+console.log(c.equals(students.get(2))) //true
 
-var c  = combineReducers({
-    testReducers,
-    test2Reducers
-})
-console.log(c);
+//统计
+console.log(students.count(s => s.get('gender') == 'F')) //2
+console.log(students.countBy(e => e.get('gender')))
 
-//var ActionTypes = {
-//    INIT: 'xx'
-//}
-//function assertReducerSanity(reducers) {
-//    Object.keys(reducers).forEach(key => {
-//        var reducer = reducers[key]
-//        var initialState = reducer(undefined, {type: ActionTypes.INIT})
-//        //console.log(initialState);
-//    })
-//}
-//// c();
-//c({'f': 'fr'}, {type: 'del'})
-//assertReducerSanity(c);
+//检索
+students.find(s => s.get('name') == 'c')
+
+//更新
+students.update(
+	students.findIndex(s => s.get('name') == 'c') , s=> s.set('score', 100)
+)
+
+//删除
+students.delete(s => s.get('name') == 'c')
+
+//
+console.log(students.map(s => s.get('score')).max())
+
+console.log(students.maxBy(s => s.get('score')))
+
+console.log(students.groupBy(s => s.get('gender')).map(g => g.map(e => e.get('score')).reduce((a, b)=> a + b, 0)))
+
+console.log(students.flatMap(s => ['name=' + s.get('name'), 'score=' + s.get('score')]).join('&amp;')
