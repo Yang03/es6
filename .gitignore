@@ -1,5 +1,6 @@
-node_modules/
+*/node_modules/
 .idea/*
 npm-debug.log
-test.*
-webpack-gulp/static/*
+*/test.*
+test*.js
+*/webpack-gulp/static/*
