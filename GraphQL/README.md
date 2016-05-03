@@ -73,17 +73,27 @@ export NODE_ENV = development
 }
 ```
 
+```
+{
+  post {
+    title
+    user {
+      firstName
+       posts {
+      title
+    }
+    }
+  }
+}
+```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
+mutation addUser {
+  addUser(firstName:"YAO") {
+    id
+  }
+}
+```
+### 启动mysql
+sudo apachectl stop //解决apache
+mysql.server start
