@@ -26,9 +26,8 @@ dispatch接收一个action，调用reducer更新的State，返回action
 
     @param Object reducer
     @return function(state={}, action)
-
-
-combineReducers返回了一个function(state={}, action)
+    
+    
 crateStore(fn:reducer, Object:initialState)
 
 源码
@@ -62,6 +61,27 @@ crateStore(fn:reducer, Object:initialState)
             return action
         }
     }
+    
+    
+combineReducers返回了一个function(state={}, action)
+```
+    var hasChanged = false
+    var nextState = {}
+    for (var i = 0; i < finalReducerKeys.length; i++) {
+      var key = finalReducerKeys[i]
+      var reducer = finalReducers[key]
+      var previousStateForKey = state[key]
+      var nextStateForKey = reducer(previousStateForKey, action) 
+      //如果当前reducer直接返回state,此时 nextStateForKey===previousStateForKey 如:function add(state, action) {switch action.type {catch: 'xx': return Object.asign({},state, '1')} default: return state}
+      if (typeof nextStateForKey === 'undefined') {
+        var errorMessage = getUndefinedStateErrorMessage(key, action)
+        throw new Error(errorMessage)
+      }
+      nextState[key] = nextStateForKey
+      hasChanged = hasChanged || nextStateForKey !== previousStateForKey
+    }
+    return hasChanged ? nextState : state
+```    
 
 ### bindActionCreators
     @param Object or function
