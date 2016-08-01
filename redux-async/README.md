@@ -10,8 +10,7 @@
 
 
 createStore() 调用时会dispatch 一个action,得到一个initialState
-如果reducer是一个combineReducer initialState是一个key 和 combineReducer
-相同的集合
+
 
 ### dispatch
 
@@ -21,13 +20,6 @@ createStore() 调用时会dispatch 一个action,得到一个initialState
     @returns action
 
 dispatch接收一个action，调用reducer更新的State，返回action
-
-### combineReducers
-
-    @param Object reducer
-    @return function(state={}, action)
-    
-    
 crateStore(fn:reducer, Object:initialState)
 
 源码
@@ -62,7 +54,7 @@ crateStore(fn:reducer, Object:initialState)
         }
     }
     
-    
+   
 combineReducers返回了一个function(state={}, action)
 ```
     var hasChanged = false
@@ -109,6 +101,31 @@ dispatch 一个action
     }
 
 ### applyMiddleware
+
+```
+//var createStoreWithMiddleware = applyMiddleware({redux-thunk})(createStore);
+// stroe = createStoreWithMiddleware(reducer, preloadedState);
+// var  enhancer = applyMiddleware({redux-thunk})
+// var  store = createStore(reducer, initialState, enhancer)
+return (createStore) => (reducer, preloadedState, enhancer) => {
+    var store = createStore(reducer, preloadedState, enhancer)
+    //enhancer(createStore)(reducer, preloadedState)
+    var dispatch = store.dispatch
+    var chain = []
+
+    var middlewareAPI = {
+      getState: store.getState,
+      dispatch: (action) => dispatch(action)
+    }
+    chain = middlewares.map(middleware => middleware(middlewareAPI))
+    dispatch = compose(...chain)(store.dispatch)  //重写了dispatch
+
+    return {
+      ...store,
+      dispatch
+    }
+  }
+```
 
 
 
