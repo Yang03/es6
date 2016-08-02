@@ -5,6 +5,12 @@ javascript es6
 
 
 #### <a href="http://babeljs.io/docs/learn-es2015/">es6英文教程</a>
- 
+
 #### <a href="https://github.com/WebAssembly/design">WebAssembly</a>
 
+### atom 安装markdown preview
+* 预览快捷键 ctrl-shift-m
+
+### atom 安装live server
+* ctrl-shift-9  live server on port 9000
+* ctrl-shift-9  live server on port 8000
