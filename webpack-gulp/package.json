@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "webpack-gulp",
   "main": "index.js",
-<<<<<<< HEAD
   "scripts": {
     "test": "test"
   },
@@ -24,16 +23,4 @@
   },
   "author": "yangpan@baixing.com",
   "license": "ISC"
-=======
-  "scripts": {},
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "gulp": "git://github.com/gulpjs/gulp#bbe3c56138a9ede627879d7e47daffd0a6d9b6db",
-    "gulp-util": "^3.0.7",
-    "babel-loader": "^5.2.2",
-    "babel-runtime": "^5.6.20",
-    "webpack": "^1.12.11"
-  }
->>>>>>> f2428e11106dbbc6abceac8741334f8e96c75541
 }

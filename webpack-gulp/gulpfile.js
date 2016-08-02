@@ -61,8 +61,7 @@ function genWebpackConfig(opt) {
                     loader: 'babel',
                     query: {
                         optional: ['runtime'],
-                        stage: 0,
-                        loose: 'all',
+                        presets: ['es2015']
                     },
                 },
                 {test: /\.css$/, loader: 'style!css?localIdentName=[local]___[hash:base64:5]&sourceMap'},
@@ -105,5 +104,3 @@ gulp.task('watch-scripts', gulp.parallel(
 gulp.task('watch', gulp.parallel(
     'watch-scripts'
 ))
-
-
