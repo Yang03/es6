@@ -1,4 +1,8 @@
+### Immutable js
+
+```
 import Immutable from 'immutable'
+
 const a = Immutable.fromJS({a: 1,b:2, c:3})
 console.log(a.inspect())  // Map { "a": 1, "b": 2, "c": 3 }
 
@@ -46,9 +50,5 @@ console.log(students.maxBy(s => s.get('score')))
 
 console.log(students.groupBy(s => s.get('gender')).map(g => g.map(e => e.get('score')).reduce((a, b)=> a + b, 0)))
 
-console.log(students.flatMap(s => ['name=' + s.get('name'), 'score=' + s.get('score')]).join('&amp;'))
-
-
-let mappedSequence = Immutable.Seq.of(1,2,3,4,5,6,7,8).map(x => x * x)
-
-console.log(mappedSequence.last())
+console.log(students.flatMap(s => ['name=' + s.get('name'), 'score=' + s.get('score')]).join('&amp;')
+```

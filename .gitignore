@@ -1,2 +1,11 @@
+<<<<<<< HEAD
 */node_modules
 .idea/workspace.xml
+=======
+*/node_modules/
+.idea/*
+npm-debug.log
+*/test.*
+*/test*
+*/webpack-gulp/static/*
+>>>>>>> f2428e11106dbbc6abceac8741334f8e96c75541
