@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+ <div id="example"></div>
+</body>
+<script src="js/build.js"></script>
+<script>
+    function isBigEnough(element, index, array) {
+        return (element > 10);
+    }
+    var filtered = [12, 5, 8, 130, 44].filter(isBigEnough);
+   console.log(filtered)
+</script>
+</html>

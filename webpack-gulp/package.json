@@ -1,0 +1,26 @@
+{
+  "name": "webpack-gulp",
+  "version": "1.0.0",
+  "description": "webpack-gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "test"
+  ],
+  "devDependencies": {
+    "babel-loader": "^5.2.2",
+    "babel-runtime": "^5.6.20",
+    "gulp": "git://github.com/gulpjs/gulp#4.0",
+    "gulp-all": "^1.0.1",
+    "gulp-babel": "^5.1.0",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-util": "^3.0.6",
+    "immutable": "^3.8.1",
+    "url-loader": "0.5.6",
+    "webpack": "^1.12.1"
+  },
+  "author": "yangpan@baixing.com",
+  "license": "ISC"
+}

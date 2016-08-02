@@ -1,0 +1,15 @@
+{
+  "name": "node-koa",
+  "version": "1.0.0",
+  "description": "node-koa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": " node --harmony src/server/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "koa": "^1.2.0"
+  }
+}
