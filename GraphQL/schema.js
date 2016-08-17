@@ -9,6 +9,9 @@ import {
     GraphQLNonNull
 } from 'graphql'
 
+user.hasMany(post)
+post.belongsTo(user)
+
 const User = new GraphQLObjectType({
     name: 'User',
     fields: () => {
