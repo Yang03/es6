@@ -1,1 +1,1 @@
-{"version":3,"sources":["webpack:///./src/scripts/index.js","webpack:///./src/scripts/test.js"],"names":[],"mappings":";;;;;;AAAA;;AACA,SAAQ,GAAR,U;;;;;;;;;;;ACDO,KAAM,gBAAI,EAAV,C","file":"index/index.js","sourcesContent":["import {b} from './test'\nconsole.log(b)\n\n\n\n/** WEBPACK FOOTER **\n ** ./src/scripts/index.js\n **/","export const b = 21\n\n\n\n/** WEBPACK FOOTER **\n ** ./src/scripts/test.js\n **/"],"sourceRoot":""}
+{"version":3,"sources":[],"names":[],"mappings":"","file":"index/index.js","sourceRoot":""}

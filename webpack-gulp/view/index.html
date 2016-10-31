@@ -8,8 +8,33 @@
 </head>
 <body>
   <div>
-
-      hello word
+      <p class="test">这是一个保姆信息保姆信息</p>
   </div>
+  <p class="test">这是一个保姆信息保姆信息</p>
+  <p class="test1">这是一个保姆信息保姆信息</p>
 </body>
+<script>
+    window.onload = function() {
+        var elements = document.querySelectorAll('.test, .test1')
+        var keyword = ['保姆', '这是']
+        var regExp = ''
+        if (keyword.length) {
+            regExp = new RegExp(keyword.join('|'), 'g', 'i')
+        }
+
+        if (elements.length) {
+            elements.forEach(function(value, index){
+                var html = value.innerHTML
+                elements[index].innerHTML = hightKeyword(html)
+            })
+        }
+
+        function hightKeyword(html) {
+            return html.replace(regExp, function(matches){
+                    return '<b>' + matches + '</b>'
+            })
+        }
+
+    }
+</script>
 </html>
