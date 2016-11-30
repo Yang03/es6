@@ -2,7 +2,7 @@ var webpack = require('webpack')
 
 module.exports = {
     entry:{
-        'index': './src/scripts/'
+        'index': './src/index'
     },
     output: {
         filename: '[name]/index.js',
@@ -24,9 +24,7 @@ module.exports = {
                     presets: ['es2015', 'stage-0']
 
                 },
-            },
-            {test: /\.css$/, loader: 'style!css?localIdentName=[local]___[hash:base64:5]&sourceMap'},
-            {test: /\.png$/, loader: "url-loader?mimetype=image/png"}
+            }
         ],
     }
 }

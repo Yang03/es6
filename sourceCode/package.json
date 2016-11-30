@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack"
+    "dev": "webpack --progress --colors --watch"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +19,7 @@
     "webpack": "^1.13.1"
   },
   "dependencies": {
+    "object-inspect": "^1.2.1",
     "redux": "^3.6.0"
   }
 }
