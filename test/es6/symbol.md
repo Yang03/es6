@@ -27,3 +27,34 @@
 
     console.log(objectSymbols)
 ```
+
+### Symbol.iterator
+Symbol.iterator 为每一个对象定义了默认的迭代器。该迭代器可以被 for...of 循环结构使用
+
+```
+
+let  foo = {'1': 1, '2': 2, '3': 3}
+
+Object.defineProperty(foo, Symbol.iterator, {
+    value: function() {
+        let _this = this
+        let keys = Object.keys(_this)
+        let len = keys.length
+        let step = 0
+        return {
+            next: function() {
+                if (step < len) {
+                    return {value: _this[keys[step++]], done: false}
+                } else {
+                    return {value: undefined, done: true}
+                }
+            }
+        }
+    }
+})
+
+
+for (let x of foo) {
+       console.log(x); // 1,2,3
+   }
+```
