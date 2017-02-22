@@ -30,47 +30,83 @@
 //         let len = keys.length
 //         let step = 0
 //         return {
-//             next: function() {
-//                 if (step < len) {
-//                     return {value: _this[keys[step++]], done: false}
-//                 } else {
-//                     return {value: undefined, done: true}
-//                 }
-//             }
-//         }
-//     }
-// })
+// //             next: function() {
+// //                 if (step < len) {
+// //                     return {value: _this[keys[step++]], done: false}
+// //                 } else {
+// //                     return {value: undefined, done: true}
+// //                 }
+// //             }
+// //         }
+// //     }
+// // })
+// //
+// //
+// // for (let x of foo) {
+// //        console.log(x);
+// //    }
+// const obj = {a:1, b: {c: 2}}
+//
+// const {a, b, d} = obj
+//
+// console.log(a) // 1
+// console.log(b) // {c: 2}
+// console.log(d) //undefined
 //
 //
-// for (let x of foo) {
-//        console.log(x);
-//    }
-const obj = {a:1, b: {c: 2}}
+//
+// const obj2 = {e:1, f: {j: 2}}
+//
+// const {f:{j} } = obj2
+//
+// const {e: y, f: {j : x}} = obj2 //重命名
+//
+//
+//
+// console.log(j) // 2
+//
+// console.log(x) // 2
+// console.log(y) //1
+//
+//
+// let [foo = true] = [] //默认值
+//
+// let {p, n: {l} = {}} = {p: 1} // 解析b 默认等于{}
+// console.log(l) //undefined
+// console.log(foo) // true
 
-const {a, b, d} = obj
+//
+// const a = [2,2,1,1]
+// const unique = [...new Set(a)]
+// console.log(unique) // {2,1}
 
-console.log(a) // 1
-console.log(b) // {c: 2}
-console.log(d) //undefined
+const person = {
+    name: 'kobe',
+    age: 24
+}
+
+const proxy = new Proxy(person, {
+    get:function(target, property){
+        return target[property] + 'test'
+    },
+    set: function(target, property, value) {
+        if (property == 'age' ) {
+            if (value > 0) {
+                target[property] = value
+            } else {
+                throw 'age must > 0'
+            }
+        }
+    }
+})
+console.log(proxy.name) //kobetest
+proxy.age = -1 // error
 
 
 
-const obj2 = {e:1, f: {j: 2}}
-
-const {f:{j} } = obj2
-
-const {e: y, f: {j : x}} = obj2 //重命名
 
 
+const key = {a: 1}
+const temp = {key: 'xxx'}
 
-console.log(j) // 2
-
-console.log(x) // 2
-console.log(y) //1
-
-
-let [foo = true] = [] //默认值
-
-let {p, n: {l} = {}} = {p: 1} // 解析b 默认等于{}
-console.log(l) //undefined
-console.log(foo) // true
+console.log(temp)

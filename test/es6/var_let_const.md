@@ -87,5 +87,5 @@
  if (true) {
      const min = 1
  }
- console.log(min) // Uncaught ReferenceError: MAX is not defined
+ console.log(min) // Uncaught ReferenceError: min is not defined
 ```
