@@ -5,4 +5,13 @@
 //
 import {test} from './index/index'
 
-test()
+//import loadImage from 'load-image'
+
+import Swipe from 'Swipe'
+//require('expose-loader?Swipe')
+
+
+//console.log(loadImage)
+console.log(Swipe)
+console.log(test)
+//test()

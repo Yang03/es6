@@ -5,6 +5,7 @@
     <title></title>
     <script src="../static/d/lib/base.js"></script>
     <script src="../static/d/index/index.js"></script>
+    <!-- <script type="text/javascript" src="./xx.js"></script> -->
 </head>
 <body>
   <div>
@@ -14,27 +15,29 @@
   <p class="test1">这是一个保姆信息保姆信息</p>
 </body>
 <script>
-    window.onload = function() {
-        var elements = document.querySelectorAll('.test, .test1')
-        var keyword = ['保姆', '这是']
-        var regExp = ''
-        if (keyword.length) {
-            regExp = new RegExp(keyword.join('|'), 'g', 'i')
-        }
+    // window.onload = function() {
+    //     var elements = document.querySelectorAll('.test, .test1')
+    //     var keyword = ['保姆', '这是']
+    //     var regExp = ''
+    //     if (keyword.length) {
+    //         regExp = new RegExp(keyword.join('|'), 'g', 'i')
+    //     }
 
-        if (elements.length) {
-            elements.forEach(function(value, index){
-                var html = value.innerHTML
-                elements[index].innerHTML = hightKeyword(html)
-            })
-        }
+    //     if (elements.length) {
+    //         elements.forEach(function(value, index){
+    //             var html = value.innerHTML
+    //             elements[index].innerHTML = hightKeyword(html)
+    //         })
+    //     }
 
-        function hightKeyword(html) {
-            return html.replace(regExp, function(matches){
-                    return '<b>' + matches + '</b>'
-            })
-        }
+    //     function hightKeyword(html) {
+    //         return html.replace(regExp, function(matches){
+    //                 return '<b>' + matches + '</b>'
+    //         })
+    //     }
 
-    }
+    // }
+    
+
 </script>
 </html>

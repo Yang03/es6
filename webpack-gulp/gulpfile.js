@@ -3,6 +3,7 @@
 var gulp = require('gulp')
 var webpack = require('webpack')
 var gutil = require('gulp-util')
+var path =require('path')
 //var eslint = require('gulp-eslint')
 
 var dist = 'static'
@@ -49,10 +50,8 @@ function genWebpackConfig(opt) {
             path: opt.dest,
         },
         devtool: '#source-map',
-        plugins: [
-            new webpack.NoErrorsPlugin(),
-            new webpack.optimize.CommonsChunkPlugin('lib/base.js'),
-        ],
+       
+       
         module: {
             loaders: [
                 {
@@ -60,14 +59,38 @@ function genWebpackConfig(opt) {
                     exclude: /(node_modules|bower_components)/,
                     loader: 'babel',
                     query: {
-                        optional: ['runtime'],
                         presets: ['es2015']
                     },
                 },
                 {test: /\.css$/, loader: 'style!css?localIdentName=[local]___[hash:base64:5]&sourceMap'},
-                {test: /\.png$/, loader: "url-loader?mimetype=image/png"}
+                {test: /\.png$/, loader: "url-loader?mimetype=image/png"},
+                {test: path.resolve(__dirname, 'node_modules/Swipe/swipe.js'), loader: "exports-loader?Swipe" },
+  
             ],
         },
+         resolve: {
+            //root: path.resolve(__dirname, 'node_modules/blueimp-load-image/js/'),
+            alias: {
+                // 'load-image': [
+       //              path.resolve(__dirname, 'node_modules/blueimp-load-image/js/load-image.all.min.js'),
+       //              //path.resolve(__dirname, 'node_modules/blueimp-load-image/js/load-image.all.min.js')
+       //          ],
+                'Swipe': [
+                     path.resolve(__dirname, 'node_modules/Swipe/swipe.js'),
+                ]
+            }
+       },
+        plugins: [
+            new webpack.NoErrorsPlugin(),
+            new webpack.optimize.CommonsChunkPlugin('lib/base.js'),
+            // new webpack.ProvidePlugin({
+            //     'window.Swipe': 'Swipe'
+            // })
+            // new webpack.ProvidePlugin({
+            //     Swipe: 'Swipe'
+            // })
+        ]
+        
     }
 
     // watch mode
