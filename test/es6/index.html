@@ -3,8 +3,28 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+  
+    <script>
+        function measureCRP() {
+            var t = window.performance.timing,
+              interactive = t.domInteractive - t.domLoading,
+              dcl = t.domContentLoadedEventStart - t.domLoading,
+              complete = t.domComplete - t.domLoading;
+              console.log(t)
+            var stats = document.createElement('p');
+            stats.textContent = 'interactive: ' + interactive + 'ms, ' +
+                'dcl: ' + dcl + 'ms, complete: ' + complete + 'ms';
+            document.body.appendChild(stats);
+
+            console.log( window.chrome.loadTimes())
+
+      }
+    </script>
 </head>
-<body>
+<body onload="measureCRP()">
+     <p>Hello <span>web performance</span></p>
+     <p id="count"></p>
+     <script src="./var_let_const.js"> </script>
 </body>
-<script src="./var_let_const.js"></script>
+<!-- <script src="./var_let_const.js"></script> -->
 </html>

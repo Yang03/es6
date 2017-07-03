@@ -89,3 +89,4 @@
  }
  console.log(min) // Uncaught ReferenceError: min is not defined
 ```
+
