@@ -27,6 +27,7 @@ function posts(state = {
                 isFetching: true
             })
         case RECEIVE_POSTS:
+            console.log(state)
             return Object.assign({}, state, {
                 isFetching: false,
                 didInvalidate: false,

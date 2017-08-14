@@ -21,7 +21,7 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new NpmInstallPlugin()
+    //new NpmInstallPlugin()
   ],
   resolve: {
     extensions: ['', '.js', '.jsx']
