@@ -20,6 +20,8 @@ documet -> html -> body -> element div
    事件由不具体的节点接收，具体的节点最后接收 out -> inner
 ```
 
+https://jsfiddle.net/mhvzow4x/
+
 ### 事件的委托
 
 利用事件的冒泡，我可以为一个element,指定事件。如：
@@ -31,7 +33,7 @@ documet -> html -> body -> element div
         li 3
 
     var $elemnet =  document.getElemetById('list')
-    $element.addElement Listener('click', function(e){
+    $element.addElementListener('click', function(e){
         console.log(e.taregt.innerHTML) 
     })
 
