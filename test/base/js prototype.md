@@ -99,4 +99,6 @@ javascript的继承，主要通过将一个类型的实例赋给子类的原型�
         return undefined
     }
 ```    
+![6941baebly1ff9jtuafvxj20ge0elt9d](https://user-images.githubusercontent.com/10190366/31983951-212c8c72-b925-11e7-912a-bd8b5387f4b6.jpg)
+相互关联的原型组成的链状结构就是原型链
 
