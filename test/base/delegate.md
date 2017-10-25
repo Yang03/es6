@@ -1,6 +1,7 @@
 ### 什么是事件冒泡？
 
 事件开始由具体的元素接收，然后逐层传播到不具体的节点
+dom标准事件流的触发的先后顺序为：先捕获再冒泡，即当触发dom事件时，会先进行事件捕获，捕获到事件源之后通过事件传播进行事件冒泡。
 
 element div -> elemet body -> element html -> document
 chorme ,safari 冒泡到window
@@ -38,6 +39,8 @@ https://jsfiddle.net/mhvzow4x/
     })
 
 ```
+
+//  动态生成的元素，是不能绑定注册事件的，但是发生click 的时候，依然会冒泡
 
 
 
