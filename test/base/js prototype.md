@@ -83,6 +83,8 @@ javascript的继承，主要通过将一个类型的实例赋给子类的原型�
 父类的构造函数，这样每个实例就有了自己的属性，通过原型链共享属性方法，通过构造函数继承实例属性。
 
 ### 什么是[[prototype]] 链？
+相互关联的原型组成的链状结构就是原型链
+
 当查找一个对象的属性时，JavaScript 会向上遍历原型链，直到找到给定名称的属性为止。
 
 直到查找到达原型链的顶部 - 也就是 Object.prototype - 如果仍然没有找到指定的属性，就会返回 undefined。
@@ -99,7 +101,4 @@ javascript的继承，主要通过将一个类型的实例赋给子类的原型�
         return undefined
     }
 ```    
-![6941baebly1ff9jtuafvxj20ge0elt9d](https://user-images.githubusercontent.com/10190366/31983951-212c8c72-b925-11e7-912a-bd8b5387f4b6.jpg)
-
-相互关联的原型组成的链状结构就是原型链
 

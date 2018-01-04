@@ -53,7 +53,7 @@ Reflect 可以拿到对象的方法
 
     // (target, name, receiver)
     // receiver this绑定receiver
-    Reflect.get(mo, 'baz', mrc)
-    console.log(mo.baz) // 8
+    Reflect.get(mo, 'baz', mrc) //8
+    console.log(mo.baz) // 3
 
 ```
