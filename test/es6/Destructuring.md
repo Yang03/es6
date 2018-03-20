@@ -28,4 +28,21 @@ let [foo = true] = [] //默认值
 let {p, n: {l} = {}} = {p: 1} // 解析b 默认等于{}
 console.log(l) //undefined
 console.log(foo) // true
+
+
+let [x, y] = ['a', 'b']; // x = 'a'; y = 'b'
+
+let obj = { first: 'Jane', last: 'Doe' };
+let { first: f, last: l } = obj; // (A)
+    // f = 'Jane'; l = 'Doe'
+    
+let {foo: x=3, bar: y} = {}; // x = 3; y = undefined
+    
+Computed property keys 
+
+const FOO = 'foo';
+let { [FOO]: f } = { foo: 123 }; // f = 123
+
+let [first, ...rest] = ['a', 'b', 'c'];
+    // first = 'a'; rest = ['b', 'c']
 ```
